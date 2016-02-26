@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add</title>
+
+	<!-- HELP BUTTON HEADER CODE BLOCK -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      //$(function() {
+	    //$( "#dialog" ).dialog();
+      //});
+	  
+	  $(document).ready(function () {
+        //$('#dialog').dialog(); 
+        $('#dialog_link').click(function () {
+          $('#dialog').dialog();
+          return false;
+        });
+      });
+    </script>
+	<!-- END HELP BUTTON HEADER CODE BLOCK -->
+
+  <!-- Non functional code for fancy date drop down-->
+  <!--<meta charset="utf-8">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script src="jQuery.ui.datepicker.js"></script>
+  <script src="jquery.ui.datepicker.mobile.js"></script>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>-->
+
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <h1>ADD</h1>
+    </div>
+
+	<!-- Help button & menu stuff -->
+    <div style="position: relative;">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+          {{#each data.buttons}}
+            <a href="{{link}}" ><p>{{name}}</p></a>
+          {{/each}}
+        </div>
+      </div>
+    
+      <div style="text-align:right; position: absolute; right:20px; top:0px;">
+        <div id="dialog" title="Add Help" style="display:none">
+          <p>Please describe your activity. Title and Category are mandatory fields.</p>
+        </div>
+        <style> .button2 {background-color: #4CAF50; border: none; color: white; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block;
+          font-size: 16px; margin: 4px 2px; cursor: pointer;}
+        </style>
+        <button class="button2" id="dialog_link">Help</button>
+      </div>
+	</div>
+	<!-- End help button & menu stuff -->
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+	 console.log("myfunction running");
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+	
+    <!--Code for drop down that doesn't channge on select, maybe use
+        full elsewhere-->
+    <!--<div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Category
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Volunteering</a></li>
+        <li><a href="#">Grades</a></li>
+      </ul>
+    </div>-->
+
+    <!-- Non functional code for fancy date drop down-->
+    <!--<p>Date: <input type="text" id="datepicker"></p>-->
+
+  <form id="addEntryForm" role="form" method="get" action="/add">
+    <div class="form-group add-page-item">
+	    <label for="title">Enter Activity Title</label>
+      <p>Title is required to save an entry</p>
+	    <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+    </div>
+
+    <!--Empty div for empty field message.-->
+    <div class="alert" id="t_alert"></div>
+    
+    <div class="form-group add-page-item">
+	    <label for="category">Select Category</label>
+      <p>Category is required to save an entry.  Select from the drop down, or type a new one.</p>
+	    <!--<input type="text" class="form-control" id="category" placeholder="Please enter one of the categories listed below" name="category">-->
+      <!--Working Category drop-down-->
+      <!--<select id="category" class="form-control" name="category">
+        <option value="" disabled selected>Please select a category</option>
+        {{#each data.categories}}
+          <option value="{{category}}">{{category}}</option>
+        {{/each}}
+      </select>-->
+    
+    
+    <input type="text" list="category" class="form-control" name="category" placeholder="Category Dropdown -->"/>
+      <datalist id="category" name="category">
+        <!--<option value="" disabled selected>Select a category.</option>-->
+        {{#each data.categories}}
+        <option value="{{category}}">{{category}}</option>
+        {{/each}}
+    </datalist>
+    </div>
+    <!--Empty div for empty field message.-->
+    <div class="alert" id="c_alert"></div>
+    
+    <div class="form-group add-page-item">
+	    <label for="date">Enter Date Accomplished</label>
+	    <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date">
+    </div>
+    <div class="form-group add-page-item">
+	    <label for="description">Enter Activity Description</label>
+	    <input type="text" class="form-control" id="description" placeholder="Description" name="description">
+    </div>
+    <div class="add-page-item">
+	  <input href="/" type="submit" id ="submitBtn" class="btn btn-default" value="Submit & Add Another" name="dest"</input>
+      <input href="/" type="submit" id ="submitBtn" class="btn btn-default" value="Submit" name="dest"</input>
+    </div>
+  </form>
+
+  <!--Ugly link back to home page-->
+  <!--<p><a href="/">Back &raquo;</a></p>-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/introHCI.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="https://code.jquery.com/jquery.js"></script> REPLACED WITH OTHER VERSION IN HEADER-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

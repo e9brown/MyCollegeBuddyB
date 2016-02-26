@@ -1,0 +1,140 @@
+{
+	"entries-sorted" : [{
+
+	}],
+
+	"entries": [
+		{
+			"title": "Fall 2015 report card",
+			"date": "10/01/2015",
+			"edit": "12/13/2015",
+			"category": "Grades",
+			"description": "Precalculus: A, Home Economics: C, PE: A+"
+		},
+		{
+			"title": "Fed homeless at soup kitchen with Bernie",
+			"date": "12/31/2015",
+			"edit": "tomorrow ",
+			"category": "Community-Service",
+			"description": "Trump was there too!"
+		},
+		{
+			"title": "Led a rally for Bernie",
+			"date": "01/30/2015",
+			"edit": "tomorrow ",
+			"category": "Leadership"
+		}
+	],
+
+	"categories": [
+		{"category": "Sports", 
+		 "score": "0"},
+		{"category": "Community-Service",
+		 "score": "1"},
+		{"category": "Grades",
+		 "score": "1"},
+		{"category": "Leadership",
+		 "score": "1"}
+	],	
+
+	"suggestions": [
+		{
+	         "id":"sports1",
+		 "weakness": "Sports",
+		 "idea": "Many colleges consider sports to demonstrate the ability to work with a team, consider joining a team."},
+
+		{
+	         "id":"sports2",
+		 "weakness": "Sports",
+		 "idea": "Coaching sports at camp is a great way to connect with younger kids, and helps build valuable leadership skills!"},
+
+		{
+		 "id":"community-service1",
+		 "weakness": "Community-Service",
+		 "idea": "Some colleges require community service, but all colleges count look favorably on it during the admissions process."},
+
+		{"id":"community-service2",
+		 "weakness": "Community-Service",
+		 "idea": "Community service is excellent for your well-being! Consider volunteering for local community organizations."},
+
+		{"id":"leadership1",
+		 "weakness": "Leadership",
+		 "idea": "Everyone is special. Check out clubs at your school and see if any interest you. If you find one, joining the club's leadership team looks great on your applications!"},
+
+		{"id":"leadership2",
+		 "weakness": "Leadership",
+		 "idea": "Colleges look for students that thrive both in and out of the classroom. Holding leadership roles is an ideal way to demonstrate that."},
+	
+		{"id":"custom1",
+		 "weakness": "custom",
+		 "idea": "Generic advice for user-created categories"},
+
+		{"id":"custom2",
+		 "weakness": "custom",
+		 "idea": "Generic advice for user-created categories2"},
+
+		{"id":"generic1",
+		 "weakness": "generic",
+		 "idea": "It's never too early to start planning for college!"},
+
+		{"id":"generic2",
+		 "weakness": "generic",
+		 "idea": "Generic advice round 2"},
+		{"id":"rounded",
+		 "weakness": "generic",
+		 "idea": "Your history is very well rounded, keep up the good work!"}
+
+	],
+
+	"user": [
+		{
+			"facebook_id" : "erik_m_brown"
+		}
+	],
+
+"mysugg": [
+
+	],
+
+"buttons": [
+      { "name": "Home",
+        "id": "option1",
+	"link": "/"
+      },
+      { "name": "Add Entry",
+        "id": "option1",
+	"link": "/add"
+      },
+      { "name": "Previous Entries",
+        "id": "option2",
+	"link": "/history"
+      },
+      { "name": "Suggestions",
+        "id": "option2",
+	"link":"/suggestions"
+      },
+      { "name": "Login/Logout",
+        "id": "option2",
+	"link": "/login"
+      }	
+	],
+
+"h-buttons": [
+      { "name": "Add Entry",
+        "id": "option1",
+	"link": "/add"
+      },
+      { "name": "Previous Entries",
+        "id": "option2",
+	"link": "/history"
+      },
+      { "name": "Suggestions",
+        "id": "option2",
+	"link":"/suggestions"
+      },
+      { "name": "Login/Logout",
+        "id": "option2",
+	"link": "/login"
+      }	
+	]
+}

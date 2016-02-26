@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Suggestions</title>
+<!-- HELP BUTTON HEADER CODE BLOCK -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+</script>
+
+    <script>
+      //$(function() {
+	    //$( "#dialog" ).dialog();
+      //});
+	  
+	  $(document).ready(function () {
+        //$('#dialog').dialog(); 
+        $('#dialog_link').click(function () {
+          $('#dialog').dialog();
+          return false;
+        });
+      });
+    </script>
+	<!-- END HELP BUTTON HEADER CODE BLOCK -->
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <h1>SUGGESTIONS</h1>
+    </div>
+
+
+	<!-- Help button & menu stuff -->
+    <div style="position: relative;">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+          {{#each data.buttons}}
+            <a href="{{link}}" ><p>{{name}}</p></a>
+          {{/each}}
+        </div>
+      </div>
+    
+      <div style="text-align:right; position: absolute; right:20px; top:0px;">
+        <div id="dialog" title="Suggestions Help" style="display:none">
+          <p>These suggestions are designed to help you gain more experience in areas you may be lacking.</p>
+        </div>
+        <style> .button2 {background-color: #4CAF50; border: none; color: white; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block;
+          font-size: 16px; margin: 4px 2px; cursor: pointer;}
+        </style>
+        <button class="button2" id="dialog_link">Help</button>
+      </div>
+	</div>
+	<!-- End help button & menu stuff -->
+
+<button onclick="identifyWeakness()" class="btn">Score</button>
+
+    {{#each data.categories}}
+    	<p>{{category}} has a score of {{score}}</p>
+    {{/each}}
+<div id="chart_div"></div>
+
+<h1> Suggestions: </h1> 
+{{#each data.mysugg}}
+<h4>{{idea}}</h4>
+{{/each}}
+
+  <!--Ugly link back to home page-->
+  <p><a href="/">Back &raquo;</a></p>
+
+  <script>
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+	 console.log("myfunction running");
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/introHCI.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="https://code.jquery.com/jquery.js"></script> REPLACED WITH OTHER VERSION IN HEADER-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/introHCI.js"></script>
+  </body>
+</html>

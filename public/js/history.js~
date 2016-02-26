@@ -1,0 +1,6 @@
+function deleteEntry(entry){
+	console.log(entry.title);
+
+}
+
+

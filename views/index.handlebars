@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>MyCollegeBuddy</title>
+	
+	<!-- HELP BUTTON HEADER CODE BLOCK -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      //$(function() {
+	    //$( "#dialog" ).dialog();
+      //});
+	  
+	  $(document).ready(function () {
+        //$('#dialog').dialog(); 
+        $('#dialog_link').click(function () {
+          $('#dialog').dialog();
+          return false;
+        });
+      });
+    </script>
+	<!-- END HELP BUTTON HEADER CODE BLOCK -->
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '759982734106669',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+		FB.getLoginStatus(function(response) {
+	  if (response.status === 'connected') {
+		var uid = response.authResponse.userID;
+		console.log("FB UID: " + uid);
+		var newuid = {'uid' : uid}
+		var accessToken = response.authResponse.accessToken;
+	  }
+	 });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<div class="container">
+		<!-- p means paragraph -->
+		<div class="jumbotron">
+			<h1>My College Buddy</h1>
+			<p>Building your college plan one step at a time</p>
+			
+				<!-- Help button -->
+    <div>
+ 
+      <div style="text-align:right; position: absolute; right:20px; top:15px;">
+        <div id="dialog" title="Home Help" style="display:none">
+          <p>Please select an option. You can add a new entry, view previous entries, view activity suggestions, or logout.</p>
+        </div>
+        <style> .button2 {background-color: #4CAF50; border: none; color: white; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block;
+          font-size: 16px; margin: 4px 2px; cursor: pointer;}
+        </style>
+        <button class="button2" id="dialog_link">Help</button>
+      </div>
+	</div>
+	<!-- End help button -->
+		</div>
+
+
+
+		
+		<div>
+		{{#each data.h-buttons}}
+		<div class="buttons" id="{{id}}"> 
+			<a href="{{link}}" class="thumbnail"><p>{{name}}</p></a>
+    		</div>
+		{{/each}}
+		</div>	
+	
+	<script>
+
+	</script>
+	
+	<div class="footer">Team Computer Science Operatives</div>
+	
+	<div class="rightfoot">
+		<div class="fb-like" data-href="http://mycollegebuddy.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+	</div>
+	
+    <!--<script src="https://code.jquery.com/jquery.js"></script> REPLACED WITH OTHER VERSION IN HEADER-->
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
