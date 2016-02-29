@@ -116,7 +116,7 @@
         "id": "option2",
 	"link": "/history"
       },
-      { "name": "Suggestions",
+      { "name": "Now What?",
         "id": "option2",
 	"link":"/suggestions"
       },
@@ -135,7 +135,7 @@
         "id": "option2",
 	"link": "/history"
       },
-      { "name": "Suggestions",
+      { "name": "Now What?",
         "id": "option3",
 	"link":"/suggestions"
       },
