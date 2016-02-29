@@ -22,28 +22,22 @@
     </script>
 	<!-- END HELP BUTTON HEADER CODE BLOCK -->
 
-  <!-- Non functional code for fancy date drop down-->
-  <!--<meta charset="utf-8">
-  <title>jQuery UI Datepicker - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-  <script src="jQuery.ui.datepicker.js"></script>
-  <script src="jquery.ui.datepicker.mobile.js"></script>
-
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>-->
+  <!-- DATE PICKER -->
+  <meta charset="utf-8">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+      $(function() {
+        $( "#datepicker" ).datepicker();
+      });
+    </script>
+  <!-- END DATE PICKER -->  
 
   </head>
+
 
   <body>
     <div class="jumbotron">
@@ -103,41 +97,33 @@ window.onclick = function(event) {
   <form id="addEntryForm" role="form" method="get" action="/add">
     <div class="form-group page-item">
 	    <label for="title">Enter Activity Title</label>
-      <p>Title is required to save an entry</p>
+      <p id="title-error" style="display: none">Title is required to save an entry</p>
 	    <input type="text" class="form-control" id="title" placeholder="Title" name="title">
     </div>
 
-    <!--Empty div for empty field message.-->
-    <div class="alert" id="t_alert"></div>
+    <hr>
     
     <div class="form-group page-item">
 	    <label for="category">Select Category</label>
-      <p>Category is required to save an entry.  Select from the drop down, or type a new one.</p>
-	    <!--<input type="text" class="form-control" id="category" placeholder="Please enter one of the categories listed below" name="category">-->
-      <!--Working Category drop-down-->
-      <!--<select id="category" class="form-control" name="category">
-        <option value="" disabled selected>Please select a category</option>
-        {{#each data.categories}}
-          <option value="{{category}}">{{category}}</option>
-        {{/each}}
-      </select>-->
-    
-    
-    <input type="text" list="category" class="form-control" name="category" placeholder="Category Dropdown -->"/>
+      <p id="category-error" style="display: none">Category is required to save an entry.  Select from the drop down, or type a new one.</p>
+      <input type="text" list="category" class="form-control" name="category" placeholder="Type New, or Select Pre-exisiting"/>
       <datalist id="category" name="category">
-        <!--<option value="" disabled selected>Select a category.</option>-->
-        {{#each data.categories}}
+      {{#each data.categories}}
         <option value="{{category}}">{{category}}</option>
-        {{/each}}
+      {{/each}}
     </datalist>
     </div>
-    <!--Empty div for empty field message.-->
-    <div class="alert" id="c_alert"></div>
+
+    <hr>
     
     <div class="form-group page-item">
 	    <label for="date">Enter Date Accomplished</label>
-	    <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date">
+	    <!--<input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date1">-->
+      <input class="form-control" type="text" id="datepicker" name="date" placeholder="mm/dd/yyyy">
     </div>
+
+    <hr>
+
     <div class="form-group page-item">
 	    <label for="description">Enter Activity Description</label>
 	    <input type="text" class="form-control" id="description" placeholder="Description" name="description">
@@ -162,6 +148,8 @@ window.onclick = function(event) {
     <!--<script src="https://code.jquery.com/jquery.js"></script> REPLACED WITH OTHER VERSION IN HEADER-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
 
   </body>
 </html>

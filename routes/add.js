@@ -5,22 +5,25 @@ var data = require('../data.json');
 
 exports.viewAdd = function(req, res) {
    //console.log(req.query);
+   //console.log(req);
+   //console.log(res);
     var newEntry = {
 		'title' :req.query.title,
 	   	'date' :req.query.date,
 	   	'edit' :req.query.date,
 	   	'category' :req.query.category,
-		'description' :req.query.description
+		'description' :req.query.description,
+		'newest' :"true"
 	   }	
    
     //console.log(newEntry);
-    console.log(validateForm(newEntry));
+    //console.log(validateForm(newEntry));
     if( validateForm(newEntry) ){
 		
 		updateScore(req.query.category)
 
    		data["entries"].push(newEntry);
-		console.log(req.query.dest);
+		//.log(req.query.dest);
 		if(req.query.dest == "Submit") {
 			res.render("index", {'data':data});
 		}
@@ -52,9 +55,7 @@ function updateScore(categorytoupdate) {
 function validateForm(entry) {
     if (entry.title == "" || entry.title == null
     	|| entry.category == "" || entry.category == null){
-    	console.log("Title and Category are required fields.")
-    	//$(".alert").html('<p>The field above is required to submit. </p>');
-    	//validateMessage();
+    	//Code goes here to make title and category messages appear.
     	return false;
     }
     else return true;

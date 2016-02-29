@@ -52,15 +52,13 @@
 
 <div class="entries page-item">
     {{#each data.entries-sorted}}
-      <div class="entry" id="{{id}}">
+      <div class="entry" id="{{id}}" style="{{mystyle}}">
         <p>{{date}}</p>
 	      <h4><strong>{{category}} : {{title}}</strong></h4>
 	      <p><i>{{description}}</i></p>
-	      <!-- <button id="{{title}}" type="button" onclick="if(confirm('Want to delete?')) delete data.entries()">Delete this entry</button> --!>
- 
 	       <hr>
       </div>
-    {{/each}}	
+    {{/each}}
 </div>
 
     

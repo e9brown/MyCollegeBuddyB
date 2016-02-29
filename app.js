@@ -20,7 +20,7 @@ var suggestions = require('./routes/suggestions');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3002);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
@@ -46,6 +46,7 @@ app.get('/login', login.viewLogin);
 app.get('/history', history.viewHistory)
 app.get('/suggestions', suggestions.viewSuggestions)
 app.get('/help', help.viewHelp);
+//app.get('/viewB', index.viewB);
 // Example route
 // app.get('/users', user.list);
 

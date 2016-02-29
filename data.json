@@ -1,7 +1,8 @@
 {
 	"entries-sorted" : [{
-
 	}],
+
+	"bool": [{ "viewB":"false" }],
 
 	"entries": [
 		{
@@ -9,20 +10,26 @@
 			"date": "10/01/2015",
 			"edit": "12/13/2015",
 			"category": "Grades",
-			"description": "Precalculus: A, Home Economics: C, PE: A+"
+			"description": "Precalculus: A, Home Economics: C, PE: A+",
+			"newest": "false",
+			"mystyle": ""
 		},
 		{
 			"title": "Fed homeless at soup kitchen with Bernie",
 			"date": "12/31/2015",
 			"edit": "tomorrow ",
 			"category": "Community-Service",
-			"description": "Trump was there too!"
+			"description": "Trump was there too!",
+			"newest": "false",
+			"mystyle": ""
 		},
 		{
 			"title": "Led a rally for Bernie",
 			"date": "01/30/2015",
 			"edit": "tomorrow ",
-			"category": "Leadership"
+			"category": "Leadership",
+			"newest": "false",
+			"mystyle": ""
 		}
 	],
 
@@ -109,7 +116,7 @@
         "id": "option2",
 	"link": "/history"
       },
-      { "name": "What Now?",
+      { "name": "Suggestions",
         "id": "option2",
 	"link":"/suggestions"
       },
@@ -128,13 +135,18 @@
         "id": "option2",
 	"link": "/history"
       },
-      { "name": "What Now?",
-        "id": "option2",
+      { "name": "Suggestions",
+        "id": "option3",
 	"link":"/suggestions"
       },
       { "name": "Login/Logout",
-        "id": "option2",
+        "id": "option4",
 	"link": "/login"
-      }	
+      },	
+      {
+      	"name": "Help",
+      	"id": "dialog_link",
+    "link": "/"
+      }
 	]
 }
